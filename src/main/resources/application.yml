@@ -1,0 +1,30 @@
+### Spring properties
+# Service registers under this name
+spring:
+  application:
+    name: customer-details-microservice
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url:  jdbc:h2:mem:CUSTOMER_DETAILS
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    # Discovery Server Access
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+
+      # HTTP Server (Tomcat) Port
+server: 
+  port: 8003
+  
